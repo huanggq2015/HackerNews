@@ -1,0 +1,35 @@
+//项目全局变量文件
+$pageMinWidth: 1200px; //页面最小宽度
+
+$pageBgColor: #FFF;//页面背景颜色
+
+$headerBgColor: #FD6621;//页头背景色
+$headerHoverBgColor: #1061FF; //页头菜单选中背景色
+$headerHeight: 30px; //首页页头高度
+
+$sectionBgColor: #F6F6EE;//页面主体背景色
+
+$borderColorMain: #DAE1F1; //主要边框颜色：按钮或者输入框的边框
+$borderColorMinor: #D8D8D8; //次要边框颜色：列表分割线
+
+$textColorMain: #293140; //主要文字颜色
+$textColorMinor: #8F8E8C; //次要文字颜色
+$textColorHover: #457CFC; //文字悬浮颜色
+
+$fontSizeLogo: 22px; //logo文字大小级别
+$fontSizeMain: 14px; //主要菜单文字大小
+$fontSizeMinor: 12px; //次要菜单文字大小
+
+
+
+$colorSuccess: #67C23A;
+$colorWarning: #E6A23C;
+$colorDanger: #F56C6C;
+$colorInfo: #909399;
+
+
+//在JS中可以获取SCSS的变量：
+:export {
+  pageMinWidth: $pageMinWidth;
+  headerHeight: $headerHeight;
+}

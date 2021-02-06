@@ -1,0 +1,152 @@
+@import "variables";
+//混合器文件
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+}
+
+@mixin transform($deg:180deg) {
+  /* Rotate div */
+  -ms-transform: rotate($deg); /* Internet Explorer */
+  -moz-transform: rotate($deg); /* Firefox */
+  -webkit-transform: rotate($deg); /* Safari 和 Chrome */
+  -o-transform: rotate($deg); /* Opera */
+  transform: rotate($deg);
+}
+
+@mixin transformX($deg:180deg) {
+  /* Rotate div */
+  -ms-transform: rotateX($deg); /* Internet Explorer */
+  -moz-transform: rotateX($deg); /* Firefox */
+  -webkit-transform: rotateX($deg); /* Safari 和 Chrome */
+  -o-transform: rotateX($deg); /* Opera */
+  transform: rotateX($deg);
+}
+
+@mixin transformY($deg:180deg) {
+  /* Rotate div */
+  -ms-transform: rotateY($deg); /* Internet Explorer */
+  -moz-transform: rotateY($deg); /* Firefox */
+  -webkit-transform: rotateY($deg); /* Safari 和 Chrome */
+  -o-transform: rotateY($deg); /* Opera */
+  transform: rotateY($deg);
+}
+
+//chrome版本滚动条
+@mixin scrollbar {
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    //background-color: #CCC;
+  }
+  /*定义滚动条轨道 内阴影+圆角*/
+  &::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    background-color: #F1F1F1;
+  }
+  /*定义滑块 内阴影+圆角*/
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #A8A8A8;
+  }
+}
+
+//按钮渐变色
+@mixin gradient($startColor:#62BBFF, $endColor:#3385FF) {
+  & {
+    background: -webkit-linear-gradient($startColor, $endColor); // Safari 5.1 - 6.0
+    background: -o-linear-gradient($startColor, $endColor); // Opera 11.1 - 12.0
+    background: -moz-linear-gradient($startColor, $endColor); // Firefox 3.6 - 15
+    background: linear-gradient($startColor, $endColor); // 标准的语法
+  }
+}
+
+//文字超出变成...
+@mixin ellipsis {
+  overflow: hidden; //超出的文本隐藏
+  text-overflow: ellipsis; //溢出用省略号显示
+  white-space: nowrap; //溢出不换行
+}
+
+@mixin boxShadow($h-shadow:0, $v-shadow:2px, $blur:2px, $spread:0, $color:rgba(0,0,0,0.2), $inset:'',$bg:#FFF) {
+  background: $bg;
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color; //firefox
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color; //webkit
+  box-shadow: $h-shadow $v-shadow $blur $spread $color; //opera或ie9
+}
+
+@mixin activeTextShadow{
+  &:active{
+    text-shadow: 0 0 1px rgba(51,133,255,.3);
+  }
+}
+
+@mixin keyframes_loading {
+  @-moz-keyframes mapSearchLoading /* Firefox */
+  {
+    0% {
+      -moz-transform: rotate(0deg);
+    }
+    50% {
+      -moz-transform: rotate(180deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes mapSearchLoading /* Safari and Chrome */
+  {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    50% {
+      -webkit-transform: rotate(180deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @-o-keyframes mapSearchLoading /* Opera */
+  {
+    0% {
+      -o-transform: rotate(0deg);
+    }
+    50% {
+      -o-transform: rotate(180deg);
+    }
+    100% {
+      -o-transform: rotate(360deg);
+    }
+  }
+  @keyframes mapSearchLoading {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

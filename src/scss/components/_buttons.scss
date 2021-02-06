@@ -1,0 +1,83 @@
+//普通按钮样式
+.miot_btn {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 15px;
+  background: linear-gradient(to right, #26D0FF, #025EFF);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.73);
+  border-radius: 2px;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 14px;
+  white-space: nowrap;
+  vertical-align: middle;
+  &:hover {
+    background: linear-gradient(to right, #159BFF, #1061FF);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  }
+  &:active {
+    background: linear-gradient(to right, #1061FF, #1061FF);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+  }
+  &.miot_btn_border {
+    background: #FFF;
+    border: 1px solid $borderColorMain;
+    color: $textColorMain;
+    &:hover {
+      border-top-color: #3385FF;
+      border-bottom-color: #62BBFF;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      color: #FFF;
+      @include gradient(#3385FF, #62BBFF);
+    }
+    &:active {
+      background: $textColorHover;
+    }
+  }
+  &.miot_btn_xs {
+    height: 18px;
+    line-height: 16px;
+    padding: 0 7px;
+    font-size: 12px;
+  }
+  &.miot_btn_small {
+    height: 28px;
+    line-height: 26px;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+  &.miot_btn_big {
+    height: 34px;
+    line-height: 32px;
+    padding: 0 15px;
+  }
+  &.miot_btn_radius {
+    border-radius: 20px;
+  }
+  &.miot_btn_forbidden, &.miot_btn_forbidden:hover {
+    background: #AAA;
+    color: #FFF;
+    cursor: not-allowed;
+    border: none;
+    &:active {
+      background: #AAA;
+      color: #FFF;
+      cursor: not-allowed;
+      border: none;
+      box-shadow: none;
+    }
+  }
+  .miot-icon {
+    margin-right: 3px;
+  }
+}
+
+button.miot_btn {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}

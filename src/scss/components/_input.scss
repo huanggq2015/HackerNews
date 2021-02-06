@@ -1,0 +1,84 @@
+//普通输入框样式
+.miot_input {
+  width: auto;
+  height: 30px;
+  line-height: 20px;
+  box-sizing: border-box;
+  border: 1px solid $borderColorMain;
+  border-radius: 2px;
+  outline: none;
+  padding: 5px 12px;
+  @include placeholder;
+  &:focus {
+    border-color: $textColorHover;
+  }
+  &.miot_input_xs {
+    height: 22px;
+    line-height: 18px;
+    padding: 2px 5px;
+  }
+  &.miot_input_small {
+    height: 26px;
+    line-height: 20px;
+    padding: 3px 10px;
+  }
+  &.miot_input_big {
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 15px;
+  }
+  &.miot_input_noBorder {
+    border: none;
+    border-radius: 0;
+    &:focus {
+      border: none;
+    }
+  }
+  &.miot_input_fullWidth {
+    width: 100%;
+  }
+}
+
+//校验没有填写的form表单的提示信息
+.miot_form_required {
+  position: relative;
+  .miot_input {
+    border: 1px solid #FE3333 !important;
+    box-sizing: border-box !important;
+  }
+  &:before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: #FE3333;
+    border-radius: 5px;
+    padding: 2px 6px;
+    color: #FFF;
+    z-index: 1;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    -ms-transform: rotate(45deg) translateX(-50%);
+    -moz-transform: rotate(45deg) translateX(-50%);
+    -webkit-transform: rotate(45deg) translateX(-50%);
+    -o-transform: rotate(45deg) translateX(-50%);
+    transform: rotate(45deg) translateX(-50%);
+    background: #FE3333;
+  }
+  &:hover {
+    z-index: 1;
+  }
+}
