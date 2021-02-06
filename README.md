@@ -1,4 +1,4 @@
-# ivr-app
+# hacker-news
 
 ## Project setup
 ```
